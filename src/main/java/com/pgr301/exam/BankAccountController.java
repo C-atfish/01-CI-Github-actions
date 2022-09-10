@@ -27,7 +27,7 @@ public class BankAccountController implements ApplicationListener<ApplicationRea
         bankService.transfer(tx, fromAccount, toAccount);
     }
 
-    @PostMappping(path = "/account", consumes = "application/json", produces = "application/json")
+    @PostMapping(path = "/account", consumes = "application/json", produces = "application/json")
     public ResponseEntity<Account> updateAccount(@RequestBody Account a) {
         bankService.updateAccount(a);
         return new ResponseEntity<>(a, HttpStatus.OK);
